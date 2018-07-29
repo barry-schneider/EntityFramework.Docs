@@ -155,7 +155,7 @@ New `Tracked` And `StateChanged` events on `ChangeTracker` can be used to write 
 
 ## Raw SQL parameter analyzer
 
-A new code analyzer is included with EF Core that detects potentially unsafe usages of our raw-SQL APIs, like `FromSql` or `ExecuteSqlCommand`. For example, for the following query, you will see a warning because _minAge_ is not parameterized:
+A new code analyzer is included with EF Core that detects potentially unsafe usages of our raw-SQL APIs, like `FromSql` ([docs](https://docs.microsoft.com/en-us/ef/core/querying/raw-sql)) ([method](https://docs.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.relationalqueryableextensions.fromsql?view=efcore-2.1)) or `ExecuteSqlCommand`([docs](https://docs.microsoft.com/en-us/ef/core/querying/raw-sql)) ([method](https://docs.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.executesqlcommand?view=efcore-2.1#Microsoft_EntityFrameworkCore_RelationalDatabaseFacadeExtensions_ExecuteSqlCommand_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_Microsoft_EntityFrameworkCore_RawSqlString_System_Object___)). For example, for the following query, you will see a warning because _minAge_ is not parameterized:
 
 ``` csharp
 var sql = $"SELECT * FROM People WHERE Age > {minAge}";
